@@ -4,6 +4,8 @@ import 'package:ebtik_tok/config/bloc_observer.dart';
 import 'package:ebtik_tok/config/bloc_providers.dart';
 import 'package:ebtik_tok/config/cache/cahce_helper.dart';
 import 'package:ebtik_tok/core/const.dart';
+import 'package:ebtik_tok/core/themes/dark_theme.dart';
+import 'package:ebtik_tok/core/themes/light_theme.dart';
 import 'package:ebtik_tok/core/widgets/error_widget.dart';
 import 'package:ebtik_tok/features/authentication/presentation/screens/login_screen.dart';
 import 'package:ebtik_tok/core/widgets/bottom_nav_bar.dart';
@@ -37,17 +39,8 @@ class EbtikarApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              useMaterial3: true,
-              fontFamily: 'Proxima Nova',
-              brightness: Brightness.light,
-            ),
-            darkTheme: ThemeData(
-              useMaterial3: true,
-              brightness: Brightness.dark,
-              fontFamily: 'Proxima Nova',
-              scaffoldBackgroundColor: Colors.black,
-            ),
+            theme: lightTheme,
+            darkTheme: darkTheme,
             themeMode: state.themeMode,
             home: uTocken.isEmpty ? LoginScreen() : BottomNavBar(),
           );
