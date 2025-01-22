@@ -75,7 +75,7 @@ The app follows **Clean Architecture**, which separates the code into layers to 
 
 ### Release APK:
 
-- https://drive.google.com/file/d/11aJ-z5O1xfq8Wq_uUxsku5Z5Xxln5vAM/view?usp=share_link
+- [https://drive.google.com/file/d/11aJ-z5O1xfq8Wq_uUxsku5Z5Xxln5vAM/view?usp=share_link](https://drive.google.com/file/d/11aJ-z5O1xfq8Wq_uUxsku5Z5Xxln5vAM/view?usp=share_link)
 
 
 ---
