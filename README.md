@@ -1,7 +1,7 @@
 # Microlearning Platform - Ebtik_tok App
 
 ## Overview
-This project is a prototype mobile app for a **microlearning platform** that provides a TikTok-style interface for users to browse and engage with short, interactive learning videos. The app is designed to deliver bite-sized educational content in an engaging and user-friendly manner, leveraging a vertically scrollable feed, smooth video playback, and interactive features like liking, saving, and sharing videos.
+This project is a prototype mobile app for a **microlearning platform** that provides a TikTok-style interface for users to browse and engage with short, interactive learning videos, leveraging a vertically scrollable feed, smooth video playback, and interactive features like saving, and sharing videos.
 
 The app is built using **Clean Architecture**, ensuring separation of concerns, testability, and scalability.
 
