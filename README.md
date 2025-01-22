@@ -11,7 +11,7 @@ The app is built using **Clean Architecture**, ensuring separation of concerns, 
 The app is built to mimic the core functionality of TikTok but focuses on educational content. It includes the following key features:
 1. **Home Feed**: A vertically scrollable feed displaying video content dynamically.
 2. **Search Functionality**: A responsive search bar to filter videos based on keywords.
-3. **Bottom Navigation Bar**: Easy navigation between Home, Search, Saved Videos, and Profile pages.
+3. **Bottom Navigation Bar**: Easy navigation between Home and Profile pages.
 4. **Profile Page**: A mock user profile with basic statistics and a list of saved videos.
 
 ---
@@ -22,8 +22,7 @@ The app is built to mimic the core functionality of TikTok but focuses on educat
 - **Vertically Scrollable Feed**: Users can scroll through a dynamic list of short learning videos.
 - **Video Playback**: Each video card includes play/pause functionality.
 - **Video Details**: Displays the title and description of the content.
-- **Interactive Icons**: Users can like, save, and share videos directly from the feed.
-- **Infinite Scroll**: Smooth lazy loading of videos for seamless browsing.
+- **Interactive Icons**: Users can save and share videos directly from the feed.
 
 ### 2. **Search Functionality**
 - **Responsive Search Bar**: Users can search for videos by typing keywords.
@@ -71,6 +70,13 @@ The app follows **Clean Architecture**, which separates the code into layers to 
    ```bash
    flutter pub get
    flutter run
+
+---
+
+### Release APK:
+
+- https://drive.google.com/file/d/11aJ-z5O1xfq8Wq_uUxsku5Z5Xxln5vAM/view?usp=share_link
+
 
 ---
 
