@@ -161,25 +161,7 @@ The app follows **Clean Architecture**, which separates the code into layers to 
 
 For any questions or feedback, feel free to reach out:
 
-- Email: h.awaesha97@gmail.com
-- GitHub: AwaeshaHuss
-
----
-
-### Note:
-
-Mock User:
-
 - phone: 0790707653
-- password: H@2212a
-
-
----
-
-## Contact
-
-For any questions or feedback, feel free to reach out:
-
 - Email: h.awaesha97@gmail.com
 - GitHub: AwaeshaHuss
 
