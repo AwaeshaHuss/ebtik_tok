@@ -1,4 +1,5 @@
 import 'package:ebtik_tok/core/const.dart';
+import 'package:ebtik_tok/core/extensions.dart';
 import 'package:ebtik_tok/core/utils.dart';
 import 'package:ebtik_tok/core/widgets/layout_builder.dart';
 import 'package:ebtik_tok/core/widgets/responsive_layout.dart';
@@ -80,6 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   textInputAction: TextInputAction.next,
                   controller: phoneController,
+                  keyboardType: TextInputType.phone,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     labelText: 'Phone Number',
@@ -93,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  keyboardType: TextInputType.phone,
                 ),
                 (height * .025).height,
                 
@@ -101,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   builder: (context, state) {
                     return TextFormField(
                       controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
                       style: const TextStyle(color: Colors.white),
                       obscureText: state.passwordVisiable,
                       decoration: InputDecoration(

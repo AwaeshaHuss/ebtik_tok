@@ -14,6 +14,7 @@ class TextFieldWidget extends StatelessWidget {
   final int? maxLines;
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
+  final InputBorder? border;
   final Color? labelColor;
   final Color? hintColor;
   final Color? textColor;
@@ -31,6 +32,7 @@ class TextFieldWidget extends StatelessWidget {
     this.enabled = true,
     this.readOnly = false,
     this.maxLines = 1,
+    this.border,
     this.enabledBorder,
     this.focusedBorder,
     this.labelColor,
@@ -56,13 +58,12 @@ class TextFieldWidget extends StatelessWidget {
         hintStyle: TextStyle(color: hintColor ?? Colors.grey), // Default hint color
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
+        border: border,
+        enabledBorder: enabledBorder ?? OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.grey),
               borderRadius: BorderRadius.circular(10),
             ),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
+        focusedBorder: focusedBorder ?? OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.white),
               borderRadius: BorderRadius.circular(10),
             ),

@@ -1,3 +1,4 @@
+import 'package:ebtik_tok/core/cubits/bottom_nav_bar_cubit.dart';
 import 'package:ebtik_tok/features/authentication/presentation/bloc/authentication_bloc.dart';
 import 'package:ebtik_tok/features/home_feed/presentation/bloc/home_feed_bloc.dart';
 import 'package:ebtik_tok/features/user_profile/presentation/bloc/user_profile_bloc.dart';
@@ -12,6 +13,7 @@ MultiBlocProvider blocProviders({required Widget child}){
     BlocProvider(create: (_) => di.sl<UserProfileBloc>()..add(GetUserProfileEvent())),
     BlocProvider(create: (_) => di.sl<HomeFeedBloc>()),
     BlocProvider(create: (_) => di.sl<ThemeCubit>()),
+    BlocProvider(create: (_) => di.sl<BottomNavBarCubit>()),
     /// rest of BlocProviders you have
   ], child: child);
 }

@@ -1,3 +1,4 @@
+import 'package:ebtik_tok/core/cubits/bottom_nav_bar_cubit.dart';
 import 'package:ebtik_tok/features/authentication/data/data_sources/authentication_data_source.dart';
 import 'package:ebtik_tok/features/authentication/data/repositories_impl/authentication_repository_impl.dart';
 import 'package:ebtik_tok/features/authentication/domain/repositories/auhtentication_repo.dart';
@@ -71,5 +72,6 @@ Future init() async{
 
   /// * OTHERS
   sl.registerFactory(() => ThemeCubit());
+  sl.registerFactory(() => BottomNavBarCubit());
   
 }

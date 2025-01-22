@@ -18,11 +18,6 @@ ThemeData lightTheme = ThemeData(
       color: Colors.black54,
     ),
   ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.white,
-    foregroundColor: Colors.black,
-    elevation: 0,
-  ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: Colors.white,
     selectedItemColor: Colors.black,

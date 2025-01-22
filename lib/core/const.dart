@@ -26,5 +26,7 @@ const String saveIconPath = '${_iconsPath}save.svg';
 const String searchIconPath = '${_iconsPath}search.svg';
 const String lightModeIconPath = '${_iconsPath}light-mode.svg';
 const String darkModeIconPath = '${_iconsPath}dark-mode.svg';
+const String homeIconPath = '${_iconsPath}home.svg';
+const String profileIconPath = '${_iconsPath}profile.svg';
 
 // ====

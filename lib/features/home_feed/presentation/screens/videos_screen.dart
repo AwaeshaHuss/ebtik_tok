@@ -1,11 +1,13 @@
 import 'package:ebtik_tok/config/cache/cahce_helper.dart';
 import 'package:ebtik_tok/core/const.dart';
+import 'package:ebtik_tok/core/extensions.dart';
 import 'package:ebtik_tok/core/utils.dart';
 import 'package:ebtik_tok/core/widgets/responsive_layout.dart';
 import 'package:ebtik_tok/features/home_feed/data/models/video_model.dart';
 import 'package:ebtik_tok/features/home_feed/presentation/bloc/home_feed_bloc.dart';
 import 'package:ebtik_tok/features/home_feed/presentation/widgets/video_player_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:svg_flutter/svg.dart';
@@ -58,37 +60,44 @@ class _VideosScreenState extends State<VideosScreen> {
     );
   }
 
-  Scaffold _buildBody({required double height, required double width}) {
-    return Scaffold(
-      body: BlocBuilder<HomeFeedBloc, HomeFeedState>(
-        buildWhen: (previous, current) => previous.videos != current.videos,
-        builder: (context, state) {
-          if (state.status.isLoading) {
-            return Center(
-              child: CircularProgressIndicator(
-                  color: Colors.grey.shade300, strokeWidth: 1),
+  PopScope _buildBody({required double height, required double width}) {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (didPop) return;
+        showExitDialog(context);
+      },
+      child: Scaffold(
+        body: BlocBuilder<HomeFeedBloc, HomeFeedState>(
+          buildWhen: (previous, current) => previous.videos != current.videos,
+          builder: (context, state) {
+            if (state.status.isLoading) {
+              return Center(
+                child: CircularProgressIndicator(
+                    color: Colors.grey.shade300, strokeWidth: 1),
+              );
+            }
+            if (state.status.isError) {
+              return const Center(
+                child: Text(
+                  'No videos available.',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              );
+            }
+            return PageView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: state.videos.length,
+              onPageChanged: (index) {
+                _saveSeenVideos(index);
+              },
+              itemBuilder: (context, index) {
+                // Build the video player widget
+                return _buildVideoContent(height, width, state, index);
+              },
             );
-          }
-          if (state.status.isError) {
-            return const Center(
-              child: Text(
-                'No videos available.',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
-            );
-          }
-          return PageView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: state.videos.length,
-            onPageChanged: (index) {
-              _saveSeenVideos(index);
-            },
-            itemBuilder: (context, index) {
-              // Build the video player widget
-              return _buildVideoContent(height, width, state, index);
-            },
-          );
-        },
+          },
+        ),
       ),
     );
   }

@@ -6,22 +6,17 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   scaffoldBackgroundColor: Colors.black,
   primaryColor: Colors.white,
-  textTheme: const TextTheme(
+  textTheme: TextTheme(
     bodyLarge: TextStyle(
-      color: Colors.white,
+      color: Colors.grey.shade300,
       fontWeight: FontWeight.bold,
     ),
     bodyMedium: TextStyle(
-      color: Colors.white70,
+      color: Colors.grey.shade300,
     ),
     bodySmall: TextStyle(
-      color: Colors.white54,
+      color: Colors.grey.shade300,
     ),
-  ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.black,
-    foregroundColor: Colors.white,
-    elevation: 0,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: Colors.black,
